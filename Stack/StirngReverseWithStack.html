@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+<script>
+    class stack {
+        constructor(maxSize) {
+            this.size = maxSize
+            this.count = 0
+            this.items = []
+        }
+        push(element) {
+            if (this.items.length >= this.size) {
+                console.log("Overflow");
+            }
+            else {
+                this.items[this.count] = element
+                this.count++
+            }
+        }
+        pop() {
+            if (this.count === 0) {
+                console.log("Underflow");
+            }
+            else {
+                this.items.length--
+                this.count--
+            }
+
+        }
+        peek() {
+
+            return (this.items[this.count - 1])
+        }
+        traverse() {
+            console.log(this.items);
+        }
+    }
+    const str = "inder"
+    function reverseStr(str) {
+        console.log(str);
+        const arr = str.split("")
+        const st = new stack(arr.length)
+        const newArr = []
+        for (let i = 0; i < arr.length; i++) {
+            st.push(arr[i])
+        }
+        for (let i = 0; i < arr.length; i++) {
+            newArr[i] = st.peek()
+            st.pop()
+        }
+        console.log(newArr.join(""));
+
+    }
+    reverseStr(str)
+</script>
+
+<body>
+
+</body>
+
+</html>

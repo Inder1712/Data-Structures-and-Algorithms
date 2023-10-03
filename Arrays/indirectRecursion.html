@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<script>
+    let money=100
+    let applePrice=6
+    let Apples=0;
+    function checkMoney(amt){
+        if(amt>0 && amt>applePrice){
+            buyApples(applePrice)
+        }
+    }
+    function buyApples(price){
+        Apples++
+        money=money-price
+        checkMoney(money)
+    }
+    checkMoney(money)
+    console.log("You bought",Apples," apples");
+</script>
+<body>
+    
+</body>
+</html>

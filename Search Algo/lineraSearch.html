@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    let ar = [1, 2, 43, 5, 23, 1, 7, 8]
+    function linearSearch(arr, elem) {
+        let found = false
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === elem) {
+                console.log("Element found at ", i, "index");
+                found = true
+            }
+
+        }
+        if (!found) {
+            console.log("Element not found");
+        }
+    }
+    linearSearch(ar, 83)
+
+</script>
+
+<body>
+
+</body>
+
+</html>

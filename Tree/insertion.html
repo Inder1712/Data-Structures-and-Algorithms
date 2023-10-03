@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    class treeNode {
+        constructor(value) {
+            this.value = value,
+                this.left = null,
+                this.right = null
+        }
+    }
+    class tree {
+        constructor() {
+            this.root = null
+        }
+        makeTree(value) {
+            let newNode = new treeNode(value)
+            if (this.root === null) {
+                this.root = newNode
+
+            } else {
+                this.insertNode(this.root, newNode)
+
+            }
+        }
+        insertNode(root, newNode) {
+            if (root.value > newNode.value) {
+
+                if (root.left === null) {
+                    root.left = newNode
+                }
+                else {
+                    this.insertNode(root.left, newNode)
+                }
+            }
+            else {
+                if (root.right === null) {
+                    root.right = newNode
+                } else {
+                    this.insertNode(root.right, newNode)
+                }
+            }
+        }
+
+
+    }
+    let tre = new tree(8)
+    tre.makeTree(89)
+    tre.makeTree(888)
+    tre.makeTree(8)
+    tre.makeTree(98)
+    tre.makeTree(4)
+
+    console.log(tre);
+</script>
+
+<body>
+
+</body>
+
+
+</html>

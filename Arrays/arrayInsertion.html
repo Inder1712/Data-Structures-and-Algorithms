@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<script>
+    // Video 2 insertion of the element at the index provided by the user
+    function traverse(arr){
+        for(let i=0;i<arr.length;i++){
+            document.write(`Element at ${i} index is ${arr[i]} <br>`)
+        }
+    }
+    function insertValue(){
+        const array=[1,2,3]
+        const value=document.getElementById("value").value
+        const index=document.getElementById("index").value
+      traverse(array)
+        document.write("<br> Array after insertion <br>")
+        for(let i=array.length-1;i>=0;i--){
+            if(i>=index){
+             
+                array[i+1]=array[i]
+                if(i==index){
+                    array[i]=value
+                }
+            }
+        }
+        traverse(array)
+    }
+</script>
+<body>
+    <!-- Video 2 insertion of the element at the index provided by the user -->
+    
+    <input type="text" id="value" placeholder="Enter the value you want to insert"/>
+    <input type="text" id="index" placeholder="Enter the index at which you want  to insert this value"/>
+    <button onclick="insertValue()">Insert</button>
+</body>
+</html>

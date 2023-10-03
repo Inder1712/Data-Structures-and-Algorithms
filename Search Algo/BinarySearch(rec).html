@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    let a = [1, 2, 34, 52, 62, 73, 84, 100]
+    function BinarySearch(element, array, front, end) {
+        if (front > end) {
+            console.log("Element not found");
+            return -1;
+        }
+        let mid = Math.floor((front + end) / 2)
+        if (array[mid] === element) {
+            console.log("Element found at the ", mid, " index");
+        }
+        else if (array[mid] > element) {
+
+            BinarySearch(element, array, 0, mid - 1)
+        }
+        else {
+            BinarySearch(element, array, mid + 1, array.length)
+        }
+
+    }
+    BinarySearch(848, a, 0, a.length)
+</script>
+
+<body>
+
+</body>
+
+</html>

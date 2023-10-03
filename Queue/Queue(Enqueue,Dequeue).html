@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+<script>
+    class Queue {
+        constructor(size) {
+            this.size = size;
+            this.items = [];
+            this.count = 0
+
+        }
+        enqueue(element) {
+            if (this.items.length >= this.size) {
+                console.log("Overflow");
+            }
+            else {
+                this.items[this.count] = element
+                this.count++
+            }
+        }
+        dequeue() {
+            if (this.items.length <= 0) {
+                console.log("Underflow");
+            }
+            else {
+                for (let i = 0; i < this.count; i++) {
+                    this.items[i] = this.items[i + 1]
+
+                }
+                this.count--;
+                this.items.length--;
+
+            }
+
+        }
+        traverse() {
+            console.log(this.items)
+        }
+
+    }
+    const Que = new Queue(5)
+    Que.enqueue(13)
+    Que.enqueue(2)
+    Que.enqueue(3)
+
+    Que.dequeue()
+    Que.dequeue()
+    Que.dequeue()
+    Que.dequeue()
+    Que.dequeue()
+    Que.traverse()
+</script>
+
+<body>
+
+</body>
+
+</html>

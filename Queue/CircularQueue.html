@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+    class CircularQueue {
+
+        constructor(size) {
+            this.size = size
+            this.front = 0
+            this.rear = 0
+            this.items = []
+        }
+
+        Enqueue(element) {
+            if (this.rear === this.size) {
+                console.log("hi");
+                this.rear = 0
+
+                this.items[this.rear] = element
+                this.rear++
+            }
+            else {
+                this.items[this.rear] = element
+                this.rear++
+            }
+
+        }
+        Dequeue() {
+            this.rear--;
+            for (let i = 0; i <= this.items.length; i++) {
+                this.items[i] = this.items[i + 1]
+                this.items.length--
+            }
+        }
+        traverse() {
+            console.log(this.items);
+        }
+    }
+
+    const Que = new CircularQueue(2)
+
+    Que.Enqueue(3)
+    Que.Enqueue(4)
+    Que.Enqueue(53)
+    Que.Enqueue(1)
+
+
+    Que.Dequeue()
+    Que.Enqueue(34)
+
+    Que.Dequeue()
+    Que.traverse()
+
+
+
+</script>
+
+<body>
+
+</body>
+
+</html>

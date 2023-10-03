@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    class linkedList {
+        constructor(data) {
+            this.head = {
+                value: data,
+                next: null
+            }
+            this.tail = this.head
+            this.size = 0
+        }
+        addNode(data) {
+            let node = {
+                value: data,
+                next: null
+            }
+            this.tail.next = node
+            this.tail = node
+            this.size++
+        }
+
+        traverssing() {
+            let counter = 0
+            let currentNode = this.head
+            while (counter <= this.size) {
+                console.log(currentNode.value);
+                currentNode = currentNode.next
+                counter++
+            }
+        }
+        deleteNode(element) {
+            let counter = 0
+            let currentNode = this.head
+            let prevNode = null
+            while (counter <= this.size) {
+
+                if (element == currentNode.value) {
+                    if (prevNode == null) {
+                        this.head = currentNode.next
+                    }
+                    else {
+                        prevNode.next = currentNode.next
+                    }
+
+                    this.size--
+                    break;
+                }
+                prevNode = currentNode
+                currentNode = currentNode.next
+                counter++
+            }
+        }
+    }
+
+    let list = new linkedList(56)
+    list.addNode(33)
+    list.addNode(87)
+    list.addNode(8773)
+    list.traverssing()
+    console.log("beta");
+    list.deleteNode(8773)
+    list.traverssing()
+</script>
+
+<body>
+
+</body>
+
+</html>

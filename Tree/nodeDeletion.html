@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    class node {
+        constructor(value) {
+            this.value = value,
+                this.left = null,
+                this.right = null
+        }
+    }
+    class tree {
+        constructor() {
+            this.root = null
+        }
+        makeTree(value) {
+            let newNode = new node(value)
+            if (!this.root) {
+                this.root = newNode
+            } else {
+                this.insertNode(this.root, newNode)
+            }
+        }
+        insertNode(root, newNode) {
+            if (root.value > newNode.value) {
+                if (!root.left) {
+                    root.left = newNode
+                } else {
+                    this.insertNode(root.left, newNode)
+                }
+            } else {
+                if (!root.right) {
+                    root.right = newNode
+                } else {
+                    this.insertNode(root.right, newNode)
+                }
+            }
+        }
+    }
+    let Tree = new tree()
+    Tree.makeTree(1)
+    Tree.makeTree(20)
+    Tree.makeTree(9)
+    Tree.makeTree(30)
+    Tree.makeTree(8)
+    Tree.makeTree(40)
+    console.log(Tree);
+
+</script>
+
+<body>
+
+</body>
+
+</html>

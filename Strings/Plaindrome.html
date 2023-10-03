@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+
+    function plaindrome(data) {
+        let start = 0
+        result = true
+        let end = data.length - 1
+        while (data.length - 1 > start) {
+
+            if (data[start] != data[end]) {
+
+                result = false
+            }
+
+            start++
+            end--
+        }
+        console.log(result);
+
+    }
+    plaindrome("levelj")
+</script>
+
+<body>
+
+</body>
+
+</html>

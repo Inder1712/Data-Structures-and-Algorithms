@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+<script>
+    class stack {
+        constructor(size) {
+            this.size = size
+            this.items = [];
+            this.count = 0;
+        }
+        push(element) {
+            if (this.items.length >= this.size) {
+                console.log("overflow");
+            }
+            else {
+                this.items[this.count] = element;
+                this.count++
+            }
+        }
+        pop() {
+            if (this.count === 0) {
+                console.log("UnderFlow");
+            }
+            else {
+                this.count--;
+                this.items.length--
+            }
+        }
+        traverse() {
+
+
+            console.log(this.items);
+        }
+    }
+    const stak = new stack(5)
+    stak.push(6)
+    stak.push(56)
+    stak.push(4)
+    stak.push(56)
+    stak.push(4)
+    stak.push(56)
+    stak.push(6)
+
+    stak.traverse()
+
+
+
+</script>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function anagram(str1, str2) {
+        ObjStr1 = {}
+        ObjStr2 = {}
+        if (str1.length == str2.length) {
+            for (ch of str1) {
+                ObjStr1[ch] = (ObjStr1[ch] || 0) + 1
+
+            }
+            for (ch of str2) {
+                if (ObjStr1[ch]) {
+                    ObjStr1--
+                }
+            }
+            if (ObjStr1 == {}) {
+                console.log("Anagram");
+            }
+            else {
+                console.log("not an anagram");
+            }
+
+        }
+        else {
+            console.log("Not an Anagram")
+        }
+
+    }
+    anagram("hello", "hello")
+</script>
+
+<body>
+
+</body>
+
+</html>

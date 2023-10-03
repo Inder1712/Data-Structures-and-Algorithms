@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    class LinkedList {
+        constructor(data) {
+            this.size = 0
+            this.head = {
+
+                Value: data,
+                next: null
+            }
+            this.tail = this.head
+        }
+        addNode(data) {
+            let node = {
+                value: data,
+                next: null
+            }
+            this.tail.next = node
+            this.tail = node
+            this.size++
+        }
+    }
+
+    let node1 = new LinkedList(200)
+    let node2 = node1.addNode(300)
+    node1.addNode(599)
+    console.log(node1.size);
+</script>
+
+<body>
+
+</body>
+
+</html>

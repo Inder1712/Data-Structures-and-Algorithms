@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    class Node {
+        constructor(value) {
+            this.value = value;
+            this.left = null;
+            this.right = null;
+        }
+    }
+
+    class Tree {
+        constructor() {
+            this.root = null;
+        }
+
+        makeTree(value) {
+            let node = new Node(value);
+            if (this.root === null) {
+                this.root = node; // You need to assign the 'node' to the root, not just the 'Node' class itself.
+            } else {
+                this.insertNode(this.root, node);
+            }
+        }
+
+        insertNode(root, newNode) {
+            if (root.value > newNode.value) { // Compare 'value' property of nodes.
+                if (root.left === null) {
+                    root.left = newNode;
+                } else {
+                    this.insertNode(root.left, newNode);
+                }
+            } else {
+                if (root.right === null) { // Compare 'right' property to null.
+                    root.right = newNode;
+                } else {
+                    this.insertNode(root.right, newNode);
+                }
+            }
+        }
+
+        traverse() {
+            return this.traversing(this.root);
+        }
+        traversing(root) {
+            if (root) {
+                console.log(root.value);
+                this.traversing(root.right)
+                this.traversing(root.left)
+            }
+        }
+
+
+    }
+
+    let tree = new Tree();
+    tree.makeTree(1);
+    tree.makeTree(2);
+    tree.makeTree(3)
+    tree.makeTree(4);
+    tree.makeTree(5);
+    tree.makeTree(6);
+    tree.traverse()
+
+
+</script>
+
+<body>
+
+</body>
+
+</html>

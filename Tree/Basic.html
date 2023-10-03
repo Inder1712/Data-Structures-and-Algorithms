@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    class node {
+        constructor(data) {
+            this.value = data,
+                this.left = null,
+                this.right = null
+        }
+    }
+    class tree {
+        constructor() {
+            this.root = null
+        }
+        isEmpty() {
+            return this.root === null ? true : false
+        }
+    }
+    let tree1 = new tree()
+    console.log(tree1.isEmpty())
+</script>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    class LinkedList {
+        constructor(data) {
+            this.size = 0
+            this.head = {
+                value: data,
+                next: null
+            }
+            this.tail = this.head
+        }
+        addNode(data) {
+            let node = {
+                value: data,
+                next: null
+            }
+            this.tail.next = node
+            this.tail = node
+            this.size++
+        }
+        traversing() {
+            let currentNode = this.head
+            let counter = 0
+            while (counter <= this.size) {
+                console.log(currentNode);
+                currentNode = this.tail
+                counter++
+            }
+        }
+    }
+
+    let List = new LinkedList(455)
+    List.addNode(7)
+    List.addNode(78)
+    List.traversing()
+
+</script>
+
+<body>
+
+</body>
+
+</html>
